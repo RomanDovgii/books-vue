@@ -187,6 +187,7 @@ export default {
     ];
     this.state = {
       isDark: false,
+      isFormOpen: false,
       selectedGenre: 'Всё',
       selectedBooks: this.books,
     };

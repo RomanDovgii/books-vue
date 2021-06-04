@@ -48,8 +48,8 @@ export default {
   border-radius: 20px;
   padding-bottom: 20px;
   margin-top: 20px;
-  transition: background-color 0.3s;
-  transition: transform 0.3s;
+  transition: background-color .3s,
+              transform .3s;
 
   &--dark {
     background-color: #3D405B;
