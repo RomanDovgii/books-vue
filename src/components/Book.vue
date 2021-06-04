@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div tabindex="0"
   class="book-card"
   :class="isDark ? `book-card--dark`: ``"
   >

@@ -64,4 +64,16 @@ export default {
   list-style: none;
   justify-content: space-between;
 }
+
+@media (max-width: 360px) {
+  .books__wr {
+    padding-left: 5px;
+    padding-right: 5px;
+    align-items: center;
+  }
+
+  .books__list {
+    justify-content: center;
+  }
+}
 </style>
