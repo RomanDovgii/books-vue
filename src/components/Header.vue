@@ -38,9 +38,6 @@ export default {
   transition: background-color 0.3s;
   background-color: #F2CC8F;
 
-  display: flex;
-  justify-content: center;
-
   min-height: 50px;
 
   &--dark {
@@ -56,5 +53,6 @@ export default {
   justify-content: space-between;
   padding-right: 30px;
   padding-left: 30px;
+  margin: 0 auto;
 }
 </style>

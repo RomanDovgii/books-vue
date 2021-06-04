@@ -36,8 +36,6 @@ export default {
 
 <style lang="scss">
 .books {
-  display: flex;
-  justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -49,6 +47,7 @@ export default {
   flex-direction: column;
   padding-right: 30px;
   padding-left: 30px;
+  margin: 0 auto;
 }
 
 .books__heading {
@@ -63,6 +62,8 @@ export default {
   flex-wrap: wrap;
   list-style: none;
   justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 @media (max-width: 360px) {

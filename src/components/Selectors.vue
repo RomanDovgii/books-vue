@@ -44,8 +44,6 @@ export default {
 <style lang="scss">
 .selectors {
   background-color: rgba(#E07A5F, 1.0);
-  display: flex;
-  justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -58,6 +56,7 @@ export default {
   flex-wrap: wrap;
   padding-right: 30px;
   padding-left: 30px;
+  margin: 0 auto;
 }
 
 .selectors__heading {

@@ -32,9 +32,6 @@ export default {
 .footer {
   background-color: #F2CC8F;
 
-  display: flex;
-  justify-content: center;
-
   min-height: 50px;
 
   &--dark {
@@ -50,5 +47,6 @@ export default {
   flex-wrap: wrap;
   padding-right: 30px;
   padding-left: 30px;
+  margin: 0 auto;
 }
 </style>
