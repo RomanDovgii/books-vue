@@ -32,9 +32,23 @@ export default {
   padding-bottom: 20px;
   font-weight: 700;
   transition: color 0.3s;
+  animation: move;
+  animation-direction: normal;
+  animation-duration: 0.5s;
 
   &--dark {
     color: #F4F1DE;
+  }
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 </style>
