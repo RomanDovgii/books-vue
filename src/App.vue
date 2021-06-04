@@ -1,6 +1,7 @@
 <template>
+  <h1 class="visually-hidden">Мои книги</h1>
   <Header/>
-  <Main/>
+  <Main :books="books"/>
   <Footer/>
 </template>
 
@@ -19,162 +20,184 @@ export default {
   data() {
     return {
       books: [],
+      state: {},
     };
   },
   created() {
     this.books = [
       {
+        id: 1,
         name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Роман',
+          'Драма',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Федор Достоевский',
         ],
-        description: '',
+        description: 'lorem ipsum',
       },
       {
-        name: '',
+        id: 2,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Фэнтези',
+          'Лингвистика',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 3,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Сказки',
+          'Рассказы',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Паша',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 4,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Мифы древней Греции',
+          'Веселые истории',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 5,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Анекдоты',
+          'Бред',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 6,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Религии',
+          'Бред',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 7,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Психология',
+          'Философия',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 8,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Программирование',
+          'Бред',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 9,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Истории',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 10,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Скучное',
+          'Учебники',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 11,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Сети',
+          'Cisco',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
       {
-        name: '',
+        id: 12,
+        name: 'Преступление и наказание',
         genres: [
-          '',
-          '',
+          'Документации',
+          'Vue',
         ],
-        Authors: [
-          '',
-          '',
+        authors: [
+          'Женя',
+          'Ваня',
         ],
-        description: '',
+        description: 'Преступление и наказание',
       },
     ];
+    this.state = {
+      isDark: false,
+    };
+  },
+  methods: {
+    changeTheme() {
+      this.state.isDark = !this.state.isDark;
+    },
   },
 };
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap');
+
 html {
   font-size: 62.5%;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 *,

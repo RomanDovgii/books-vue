@@ -2,17 +2,20 @@
   <header class="header">
     <div class="header__wr">
       <Logo/>
+      <ThemeSwitcher/>
     </div>
   </header>
 </template>
 
 <script>
 import Logo from './Logo.vue';
+import ThemeSwitcher from './ThemeSwitcher.vue';
 
 export default {
   name: 'Header',
   components: {
     Logo,
+    ThemeSwitcher,
   },
 };
 </script>

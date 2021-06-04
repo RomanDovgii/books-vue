@@ -1,6 +1,6 @@
 <template>
   <a class="logo">
-    <h1 class="logo__heading">Мои Книги</h1>
+    <p class="logo__heading">Мои Книги</p>
   </a>
 </template>
 
@@ -21,5 +21,6 @@ export default {
   font-size: 4rem;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-weight: 700;
 }
 </style>

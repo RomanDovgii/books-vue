@@ -1,12 +1,25 @@
 <template>
   <main class="main">
-
+    <Selectors/>
+    <Books :books="books"/>
   </main>
 </template>
 
 <script>
+import Selectors from './Selectors.vue';
+import Books from './Books.vue';
+
 export default {
   name: 'Main',
+  components: {
+    Selectors,
+    Books,
+  },
+  props: {
+    books: {
+      type: Array,
+    },
+  },
 };
 </script>
 
