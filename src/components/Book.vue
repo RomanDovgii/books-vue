@@ -3,7 +3,7 @@
   class="book-card"
   :class="isDark ? `book-card--dark`: ``"
   >
-    <img src="https://picsum.photos/seed/picsum/300/300" alt="" class="book-card__img" width="300" height="200">
+    <img src="https://picsum.photos/seed/picsum/300/300" :alt="book.name" class="book-card__img" width="300" height="200">
     <h3 class="book-card__name">{{ book.name }}</h3>
     <ul class="book-card__genres">
       <li
