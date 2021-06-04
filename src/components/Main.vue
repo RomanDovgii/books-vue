@@ -7,18 +7,23 @@
     :genres="genres"
     :selectedGenre="selectedGenre"/>
     <Books :books="books" :isDark="isDark"/>
+    <AddBook
+    @open-form="openFormBridge"
+    :isDark="isDark"/>
   </main>
 </template>
 
 <script>
 import Selectors from './Selectors.vue';
 import Books from './Books.vue';
+import AddBook from './AddBook.vue';
 
 export default {
   name: 'Main',
   components: {
     Selectors,
     Books,
+    AddBook,
   },
   props: {
     books: {
@@ -37,6 +42,9 @@ export default {
   methods: {
     changeGenreBridgeMain(genre) {
       this.$emit('select-genre', genre);
+    },
+    openFormBridge() {
+      this.$emit('open-form');
     },
   },
 };

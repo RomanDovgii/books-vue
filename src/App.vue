@@ -6,7 +6,8 @@
   :selectedGenre="this.state.selectedGenre"
   :books="this.state.selectedBooks"
   :genres="genres"
-  @select-genre="selectNewGenre"/>
+  @select-genre="selectNewGenre"
+  @open-form="showForm"/>
   <Footer :isDark="this.state.isDark"/>
 </template>
 
@@ -228,6 +229,10 @@ export default {
     selectNewGenre(genre) {
       this.state.selectedGenre = genre;
       this.sortBooks(this.books, genre);
+    },
+    showForm() {
+      this.state.isFormOpen = !this.state.isFormOpen;
+      console.log(this.state.isFormOpen);
     },
   },
 };
