@@ -8,7 +8,7 @@
         v-for="book in books"
         :key="`${book.id}${book.name}${book.genres[0]}`"
         >
-          <Book :book="book"/>
+          <Book :book="book" :isDark="isDark"/>
         </li>
       </ul>
     </div>
@@ -26,6 +26,9 @@ export default {
   props: {
     books: {
       type: Array,
+    },
+    isDark: {
+      type: Boolean,
     },
   },
 };

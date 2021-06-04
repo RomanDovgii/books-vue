@@ -1,5 +1,8 @@
 <template>
-  <div class="book-card">
+  <div
+  class="book-card"
+  :class="isDark ? `book-card--dark`: ``"
+  >
     <img src="https://picsum.photos/seed/picsum/300/300" alt="" class="book-card__img" width="300" height="200">
     <h3 class="book-card__name">{{ book.name }}</h3>
     <ul class="book-card__genres">
@@ -30,6 +33,9 @@ export default {
     book: {
       type: Object,
     },
+    isDark: {
+      type: Boolean,
+    },
   },
 };
 </script>
@@ -43,6 +49,17 @@ export default {
   padding-bottom: 20px;
   transition: transform 0.3s;
   margin-top: 20px;
+  transition: background-color 0.3s;
+
+  &--dark {
+    background-color: #3D405B;
+
+    .book-card__name,
+    .book-card__genres,
+    .book-card__authors {
+      color: #F4F1DE;
+    }
+  }
 
   &:hover {
     transform: scale(1.1);
@@ -60,6 +77,8 @@ export default {
 .book-card__authors {
   padding-left: 20px;
   padding-right: 20px;
+  color: #3D405B;
+  transition: color 0.3s;
 }
 
 .book-card__name {

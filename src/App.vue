@@ -1,8 +1,12 @@
 <template>
   <h1 class="visually-hidden">Мои книги</h1>
-  <Header/>
-  <Main :books="books"/>
-  <Footer/>
+  <Header :isDark="this.state.isDark" @change-theme="changeTheme"/>
+  <Main
+  :isDark="this.state.isDark"
+  :selectedGenre="this.state.selectedGenre"
+  :books="books"
+  :genres="genres"/>
+  <Footer :isDark="this.state.isDark"/>
 </template>
 
 <script>
@@ -182,11 +186,28 @@ export default {
     ];
     this.state = {
       isDark: false,
+      selectedGenre: 'Всё',
     };
+    this.genres = this.sortGenres(this.books);
   },
   methods: {
     changeTheme() {
       this.state.isDark = !this.state.isDark;
+    },
+    sortGenres(books) {
+      if (books.length !== 0) {
+        const genres = books.reduce((accumulator, book) => {
+          book.genres.forEach((genre) => {
+            if (!accumulator.includes(genre)) {
+              accumulator.push(genre);
+            }
+          });
+
+          return accumulator;
+        }, []);
+        return ['Всё', ...genres];
+      }
+      return [];
     },
   },
 };

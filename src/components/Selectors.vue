@@ -3,8 +3,11 @@
     <div class="selectors__wr">
       <h2 class="selectors__heading">Сортировка по жанрам:</h2>
       <ul class="selectors__list">
-        <li class="selectors__el">
-          <Selector/>
+        <li class="selectors__el"
+          v-for="genre in genres"
+          v-bind:key="`${genre}-selector`"
+        >
+          <Selector :genre="genre" :selectedGenre="selectedGenre"/>
         </li>
       </ul>
     </div>
@@ -16,6 +19,14 @@ import Selector from './Selector.vue';
 
 export default {
   name: 'Selectors',
+  props: {
+    genres: {
+      type: Array,
+    },
+    selectedGenre: {
+      type: String,
+    },
+  },
   components: {
     Selector,
   },
@@ -42,10 +53,13 @@ export default {
   font-size: 3rem;
   color: #F4F1DE;
   font-weight: 300;
+  min-width: 250px;
 }
 
 .selectors__list {
   list-style: none;
   align-self: flex-end;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
-  <main class="main">
-    <Selectors/>
-    <Books :books="books"/>
+  <main
+  class="main"
+  :class="isDark ? `main--dark`: ``"
+  >
+    <Selectors :genres="genres" :selectedGenre="selectedGenre"/>
+    <Books :books="books" :isDark="isDark"/>
   </main>
 </template>
 
@@ -19,6 +22,15 @@ export default {
     books: {
       type: Array,
     },
+    genres: {
+      type: Array,
+    },
+    isDark: {
+      type: Boolean,
+    },
+    selectedGenre: {
+      type: String,
+    },
   },
 };
 </script>
@@ -27,5 +39,10 @@ export default {
 .main {
   flex-grow: 1;
   background-color: #F4F1DE;
+  transition: background-color 0.3s;
+
+  &--dark {
+    background-color: #313131f6;
+  }
 }
 </style>

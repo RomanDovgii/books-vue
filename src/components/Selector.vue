@@ -1,10 +1,21 @@
 <template>
-  <button class="selector selector--selected">Драма</button>
+  <button
+  class="selector"
+  :class="selectedGenre === genre ? 'selector--selected' : ''"
+  >{{genre}}</button>
 </template>
 
 <script>
 export default {
   name: 'Selector',
+  props: {
+    genre: {
+      type: String,
+    },
+    selectedGenre: {
+      type: String,
+    },
+  },
 };
 </script>
 

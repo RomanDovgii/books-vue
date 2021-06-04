@@ -1,8 +1,11 @@
 <template>
-  <footer class="footer">
+  <footer
+  class="footer"
+  :class="isDark ? `footer--dark`: ``"
+  >
     <div class="footer__wr">
-      <Developer/>
-      <Logo/>
+      <Developer :isDark="isDark"/>
+      <Logo :isDark="isDark"/>
     </div>
   </footer>
 </template>
@@ -13,6 +16,11 @@ import Developer from './Developer.vue';
 
 export default {
   name: 'Footer',
+  props: {
+    isDark: {
+      type: Boolean,
+    },
+  },
   components: {
     Logo,
     Developer,
@@ -28,6 +36,10 @@ export default {
   justify-content: center;
 
   min-height: 50px;
+
+  &--dark {
+    background-color: #3D405B;
+  }
 }
 
 .footer__wr {
