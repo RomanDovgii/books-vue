@@ -47,9 +47,9 @@ export default {
   background-color: #F2CC8F;
   border-radius: 20px;
   padding-bottom: 20px;
-  transition: transform 0.3s;
   margin-top: 20px;
   transition: background-color 0.3s;
+  transition: transform 0.3s;
 
   &--dark {
     background-color: #3D405B;
