@@ -1,4 +1,14 @@
 <template>
+  <svg
+  width="100"
+  height="100"
+  x="0px"
+  y="0px"
+  viewBox="0 0 512.004 512.004"
+  style="enable-background:new 0 0 512.004 512.004;"
+  xml:space="preserve">
+    <use href="#books"/>
+  </svg>
   <h1 class="visually-hidden">Мои книги</h1>
   <Header :isDark="this.state.isDark" @change-theme="changeTheme"/>
   <Main
