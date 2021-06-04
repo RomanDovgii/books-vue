@@ -2,6 +2,7 @@
   <button
   class="selector"
   :class="selectedGenre === genre ? 'selector--selected' : ''"
+  @click="onChange(genre)"
   >{{genre}}</button>
 </template>
 
@@ -14,6 +15,11 @@ export default {
     },
     selectedGenre: {
       type: String,
+    },
+  },
+  methods: {
+    onChange(genre) {
+      this.$emit('select-genre', genre);
     },
   },
 };

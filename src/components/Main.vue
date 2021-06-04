@@ -3,7 +3,9 @@
   class="main"
   :class="isDark ? `main--dark`: ``"
   >
-    <Selectors :genres="genres" :selectedGenre="selectedGenre"/>
+    <Selectors @select-genre="changeGenreBridgeMain"
+    :genres="genres"
+    :selectedGenre="selectedGenre"/>
     <Books :books="books" :isDark="isDark"/>
   </main>
 </template>
@@ -30,6 +32,11 @@ export default {
     },
     selectedGenre: {
       type: String,
+    },
+  },
+  methods: {
+    changeGenreBridgeMain(genre) {
+      this.$emit('select-genre', genre);
     },
   },
 };

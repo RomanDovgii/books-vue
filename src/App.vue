@@ -4,8 +4,9 @@
   <Main
   :isDark="this.state.isDark"
   :selectedGenre="this.state.selectedGenre"
-  :books="books"
-  :genres="genres"/>
+  :books="this.state.selectedBooks"
+  :genres="genres"
+  @select-genre="selectNewGenre"/>
   <Footer :isDark="this.state.isDark"/>
 </template>
 
@@ -187,6 +188,7 @@ export default {
     this.state = {
       isDark: false,
       selectedGenre: 'Всё',
+      selectedBooks: this.books,
     };
     this.genres = this.sortGenres(this.books);
   },
@@ -208,6 +210,23 @@ export default {
         return ['Всё', ...genres];
       }
       return [];
+    },
+    sortBooks(books, genre) {
+      if (genre !== 'Всё') {
+        const sortedBooks = books.reduce((accumulator, book) => {
+          if (book.genres.includes(genre)) {
+            accumulator.push(book);
+          }
+          return accumulator;
+        }, []);
+        this.state.selectedBooks = sortedBooks;
+      } else {
+        this.state.selectedBooks = this.books;
+      }
+    },
+    selectNewGenre(genre) {
+      this.state.selectedGenre = genre;
+      this.sortBooks(this.books, genre);
     },
   },
 };

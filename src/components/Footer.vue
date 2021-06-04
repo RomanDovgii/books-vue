@@ -47,5 +47,8 @@ export default {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 </style>

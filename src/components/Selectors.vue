@@ -7,7 +7,10 @@
           v-for="genre in genres"
           v-bind:key="`${genre}-selector`"
         >
-          <Selector :genre="genre" :selectedGenre="selectedGenre"/>
+        <Selector
+        @select-genre="changeGenreBridgeSelectors"
+        :genre="genre"
+        :selectedGenre="selectedGenre"/>
         </li>
       </ul>
     </div>
@@ -30,6 +33,11 @@ export default {
   components: {
     Selector,
   },
+  methods: {
+    changeGenreBridgeSelectors(genre) {
+      this.$emit('select-genre', genre);
+    },
+  },
 };
 </script>
 
@@ -47,6 +55,9 @@ export default {
   width: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .selectors__heading {

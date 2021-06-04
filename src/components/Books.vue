@@ -47,6 +47,8 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .books__heading {

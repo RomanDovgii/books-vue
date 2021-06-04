@@ -54,5 +54,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 </style>
