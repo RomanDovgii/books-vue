@@ -1,7 +1,7 @@
 <template>
   <section class="books">
     <div class="books__wr">
-      <h2 class="books__heading">Книги:</h2>
+      <h2 class="books__heading" id="books">Книги:</h2>
       <ul class="books__list">
         <li
         class="books__el"

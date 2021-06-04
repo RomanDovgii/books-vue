@@ -1,5 +1,5 @@
 <template>
-  <a class="logo">
+  <a class="logo" href="#books">
     <p
     class="logo__heading"
     :class="isDark ? `logo__heading--dark`: ``"
@@ -22,6 +22,7 @@ export default {
 .logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .logo__heading {

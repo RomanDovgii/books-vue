@@ -238,6 +238,7 @@ export default {
 html {
   font-size: 62.5%;
   font-family: 'Open Sans Condensed', sans-serif;
+  scroll-behavior: smooth;
 }
 
 *,
